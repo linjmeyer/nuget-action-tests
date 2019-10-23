@@ -25,9 +25,10 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
       # Dotnet pack and nuget push
       - name: Pack and Release
+        id: pack_release
         run: |
           PACKAGE="nuget-action-tests"
-          echo ::set-output package=$PACKAGE
+          echo ::set-output PACKAGE=$PACKAGE
           dotnet pack src/$PACKAGE --output nupkgs -p:Version=${{ steps.get_version.outputs.VERSION }}
           dotnet nuget push nupkgs/$PACKAGE.*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
         if: startsWith(github.ref, 'refs/tags/')
@@ -36,6 +37,8 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          body: "test"
+          body: |
+            ${{ steps.pack_release.outputs.PACKAGE }} version ${{ steps.get_version.outputs.VERSION }}
+            `dotnet add package ${{ steps.pack_release.outputs.PACKAGE }} --version ${{ steps.get_version.outputs.VERSION }}`
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
