@@ -21,7 +21,11 @@ jobs:
       # Get tag version from git
       - name: Get tag version
         id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF##*/v}
+        run: |
+          VERSION=${GITHUB_REF##*/v}
+          PRERELEASE=$([ "$VERSION" == "*-*" ] && echo "true" || echo "false")
+          echo ::set-output name=VERSION::$VERSION
+          echo ::set-output name=PRERELEASE::$PRERELEASE
         if: startsWith(github.ref, 'refs/tags/')
       # Dotnet pack and nuget push
       - name: Pack and Release
@@ -37,6 +41,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
+          prerelease: ${{ steps.get_version.outputs.PRERELEASE }}
           body: |
             Install instructions: 
             `dotnet add package ${{ steps.pack_release.outputs.PACKAGE }} --version ${{ steps.get_version.outputs.VERSION }}`
