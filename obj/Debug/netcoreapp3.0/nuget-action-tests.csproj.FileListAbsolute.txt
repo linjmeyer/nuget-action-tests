@@ -1,0 +1,11 @@
+/Users/lin.meyer/Repos/nuget-action-tests/bin/Debug/netcoreapp3.0/nuget-action-tests
+/Users/lin.meyer/Repos/nuget-action-tests/bin/Debug/netcoreapp3.0/nuget-action-tests.deps.json
+/Users/lin.meyer/Repos/nuget-action-tests/bin/Debug/netcoreapp3.0/nuget-action-tests.runtimeconfig.json
+/Users/lin.meyer/Repos/nuget-action-tests/bin/Debug/netcoreapp3.0/nuget-action-tests.runtimeconfig.dev.json
+/Users/lin.meyer/Repos/nuget-action-tests/bin/Debug/netcoreapp3.0/nuget-action-tests.dll
+/Users/lin.meyer/Repos/nuget-action-tests/bin/Debug/netcoreapp3.0/nuget-action-tests.pdb
+/Users/lin.meyer/Repos/nuget-action-tests/obj/Debug/netcoreapp3.0/nuget-action-tests.csprojAssemblyReference.cache
+/Users/lin.meyer/Repos/nuget-action-tests/obj/Debug/netcoreapp3.0/nuget-action-tests.AssemblyInfoInputs.cache
+/Users/lin.meyer/Repos/nuget-action-tests/obj/Debug/netcoreapp3.0/nuget-action-tests.AssemblyInfo.cs
+/Users/lin.meyer/Repos/nuget-action-tests/obj/Debug/netcoreapp3.0/nuget-action-tests.dll
+/Users/lin.meyer/Repos/nuget-action-tests/obj/Debug/netcoreapp3.0/nuget-action-tests.pdb

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>nuget-action-tests</id>
+    <version>1.0.0</version>
+    <authors>nuget-action-tests</authors>
+    <owners>nuget-action-tests</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="/Users/lin.meyer/Repos/nuget-action-tests/bin/Debug/netcoreapp3.0/nuget-action-tests.runtimeconfig.json" target="lib/netcoreapp3.0/nuget-action-tests.runtimeconfig.json" />
+    <file src="/Users/lin.meyer/Repos/nuget-action-tests/bin/Debug/netcoreapp3.0/nuget-action-tests.dll" target="lib/netcoreapp3.0/nuget-action-tests.dll" />
+  </files>
+</package>
