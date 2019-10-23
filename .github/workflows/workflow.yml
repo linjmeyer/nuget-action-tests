@@ -38,7 +38,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           body: |
-            \# ${{ steps.pack_release.outputs.PACKAGE }} v${{ steps.get_version.outputs.VERSION }}
+            Install instructions: 
             `dotnet add package ${{ steps.pack_release.outputs.PACKAGE }} --version ${{ steps.get_version.outputs.VERSION }}`
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
