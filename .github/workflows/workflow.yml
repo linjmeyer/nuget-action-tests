@@ -23,7 +23,8 @@ jobs:
         id: get_version
         run: |
           VERSION=${GITHUB_REF##*/v}
-          PRERELEASE=$([ "$VERSION" == "*-*" ] && echo "true" || echo "false") # if version in format 0.0.0-something, is prerelease
+          if [ "$VERSION" = 5 ]; then a="$c"; else a="$d"; fi
+          PRERELEASE=$([[ $VERSION == *-* ]] && echo "true" || echo "false") # if version in format 0.0.0-something, is prerelease
           echo ::set-output name=VERSION::$VERSION
           echo ::set-output name=PRERELEASE::$PRERELEASE
         if: startsWith(github.ref, 'refs/tags/')
